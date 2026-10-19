@@ -1,0 +1,27 @@
+[package]
+name = "motifenricher"
+version = "0.2.0"
+edition = "2021"
+description = "Multithreaded de novo motif enrichment for promoter sequences"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/HAUSSR/Motifenricher"
+keywords = ["bioinformatics", "motif", "promoter", "genomics", "enrichment"]
+categories = ["science", "command-line-utilities"]
+autobins = false
+
+[lib]
+name = "motifenricher"
+
+[[bin]]
+name = "Motifenricher"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+rayon = "1.10"
+
+[profile.release]
+lto = true
+codegen-units = 1

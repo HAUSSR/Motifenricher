@@ -1,0 +1,4 @@
+# Local Windows build convenience: rust's bundled MinGW runtime is
+# self-contained so no external libgcc_eh is required. Ignored on Linux.
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-self-contained=yes"]
